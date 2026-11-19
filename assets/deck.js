@@ -6,6 +6,13 @@
   if(modoPdf)html.classList.add('pdf');
   /* PDF: o vídeo da montagem para no display já montado */
   if(modoPdf)document.querySelectorAll('video').forEach(v=>{v.removeAttribute('autoplay');v.pause();const f=()=>{try{v.currentTime=4.2}catch(e){}};v.readyState>0?f():v.addEventListener('loadedmetadata',f,{once:true});});
+  /* espaços da equipe de design: assets/slots/<nome>.<webp|png|jpg|svg|mp4> entra sozinho no lugar reservado */
+  $$('[data-slot]').forEach(f=>{const nome=f.dataset.slot,exts=(f.dataset.tipos||'webp png jpg svg').split(' ');let i=0;
+    (function tenta(){if(i>=exts.length)return;const e=exts[i++],u='assets/slots/'+nome+'.'+e;
+      if(e==='mp4'){const v=document.createElement('video');v.muted=true;v.loop=true;v.playsInline=true;v.autoplay=!modoPdf;v.preload='auto';
+        v.addEventListener('loadeddata',()=>{f.classList.add('cheio');f.prepend(v);if(modoPdf){try{v.currentTime=Math.min(4,(v.duration||8)/2)}catch(x){}}else v.play().catch(()=>{});},{once:true});
+        v.addEventListener('error',tenta,{once:true});v.src=u;}
+      else{const im=new Image();im.onload=()=>{im.alt=f.dataset.alt||'';f.classList.add('cheio');f.prepend(im);};im.onerror=tenta;im.src=u;}})();});
   const total=telas.length,dd=n=>String(n).padStart(2,'0');let atual=-1,verFala=false;
 
   /* celular: abaixo de 900 px as telas viram blocos empilhados */

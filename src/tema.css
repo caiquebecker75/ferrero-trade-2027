@@ -1,0 +1,155 @@
+/* ===== Ferrero × 75 LAB · tema: identidade Ferrero Rocher (ouro, chocolate, creme, serifa) sobre o motor da 75 LAB ===== */
+:root{
+  --ink:#1E120A;--ink-2:#2B1A10;--ink-3:#3A2416;--ink-4:#4A2E1C;
+  --paper:#F6EFE3;--paper-2:#ECE2D1;--branco:#FFFCF6;
+  --am:#C9A45C;--am-2:#9C7A3C;--am-cl:#EBD49C;--vm:#8B4A22;--vm-2:#6E3517;
+  --texto:#5C4636;--texto-cl:#D8C8AE;
+  --foil:linear-gradient(115deg,#7E5C25 0%,#C9A45C 16%,#F7E3A8 30%,#D7B46C 42%,#8E6A2E 58%,#E9D198 76%,#A9843F 100%);
+  --serif:'Playfair Display',Georgia,serif;--corpo:'Jost',system-ui,sans-serif;--mono:'Space Mono',ui-monospace,monospace;
+  --titulo:var(--serif);
+  --linha:rgba(30,18,10,.13);--linha-cl:rgba(246,239,227,.15);
+}
+html,body{background:#120A05;font-family:var(--corpo)}
+#wrap{background:#120A05}
+@keyframes brilho{to{background-position:-250% 0}}
+@keyframes folha{to{background-position:100% 100%}}
+@keyframes gira{to{transform:rotate(360deg)}}
+@keyframes flutuar{50%{transform:translateY(-14px) rotate(8deg)}}
+@keyframes pulsa2{0%{transform:scale(.92);opacity:.9}100%{transform:scale(1.55);opacity:0}}
+@keyframes varrer{0%{transform:translateX(-110%)}55%,100%{transform:translateX(110%)}}
+@keyframes cresce{from{width:0}}
+@keyframes sobe{from{transform:scaleY(0)}}
+@keyframes cintila{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:1;transform:scale(1)}}
+@keyframes kb{to{transform:scale(1.06)}}
+
+/* telas: fundos com profundidade */
+.tela.claro,.tela.papel{background:radial-gradient(1100px 720px at 50% 42%,#FFFBF3 0%,var(--paper) 55%,#E6D9C3 100%);color:var(--ink)}
+.tela.escuro{background:radial-gradient(1000px 700px at 50% 40%,#4E3020 0%,#2B1A10 48%,#140B06 100%);color:var(--paper)}
+.tela.amarelo{background:var(--foil);background-size:220% 220%;animation:folha 16s ease-in-out infinite alternate;color:var(--ink)}
+.tela::before{background:radial-gradient(520px circle at var(--mx) var(--my),rgba(233,209,152,.16),transparent 62%)}
+.tela.amarelo::before{background:radial-gradient(520px circle at var(--mx) var(--my),rgba(255,250,230,.35),transparent 60%)}
+.grao{opacity:.06}
+
+/* tipografia */
+h1,h2,h3,.num{font-family:var(--serif);font-weight:600;text-transform:none;letter-spacing:-.005em;line-height:1.04}
+h2{font-size:50px}
+h1 em,h2 em{font-style:italic;font-weight:500;color:var(--vm)}
+.escuro h1 em,.escuro h2 em{color:transparent;background:var(--foil);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;animation:brilho 7s linear infinite}
+.amarelo h2 em{color:var(--vm-2)}
+.eyebrow{font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--am-2)}
+.escuro .eyebrow{color:var(--am)}
+.amarelo .eyebrow{color:var(--vm-2)}
+.lead{font-family:var(--corpo);font-weight:300;font-size:20px;line-height:1.5;color:var(--texto);max-width:640px}
+.escuro .lead{color:var(--texto-cl)}
+.amarelo .lead{color:var(--ink)}
+.fonte{left:300px;right:300px;bottom:24px;font-size:8.5px;line-height:1.35;opacity:.4;text-align:center;font-family:var(--mono);letter-spacing:.02em}
+
+/* moldura: marcas e área central menor */
+.marcas{left:80px;right:80px;top:30px;height:44px}
+.marcas .par{gap:16px}
+.logo-cli{display:flex;align-items:center;gap:10px;height:40px}
+.logo-cli img{height:38px;width:auto}
+.logo-cli svg{width:36px;height:36px}
+.logo-cli b{font-family:var(--serif);font-weight:600;font-size:27px;letter-spacing:.01em;line-height:1}
+.logo-cli.cheio svg,.logo-cli.cheio b{display:none}
+.marcas .par img.lab{height:15px}
+.marcas .x{opacity:.4}
+.palco{position:absolute;left:150px;right:150px;top:118px;bottom:84px;display:flex;flex-direction:column;justify-content:center;z-index:2}
+.cabeca{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:34px}
+.cabeca .eyebrow{display:flex;align-items:center;gap:14px}
+.cabeca .eyebrow::before,.cabeca .eyebrow::after{content:'';width:34px;height:1px;background:currentColor;opacity:.55}
+.cabeca h2{margin-top:12px;max-width:1120px}
+.cabeca .lead{margin-top:12px;text-align:center;max-width:720px}
+
+/* fio da história, botões e contador */
+#fio{position:absolute;left:50%;top:44px;transform:translateX(-50%);display:flex;gap:24px;list-style:none;z-index:40;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);transition:opacity .4s}
+#fio li{display:flex;align-items:center;gap:8px;opacity:.35;transition:opacity .4s}
+#fio li::before{content:'';width:6px;height:6px;transform:rotate(45deg);border:1px solid currentColor;transition:background .4s,box-shadow .4s}
+#fio li.on{opacity:1}#fio li.on::before{background:var(--am);border-color:var(--am);box-shadow:0 0 10px var(--am)}
+#fio li.feito{opacity:.65}#fio li.feito::before{background:currentColor}
+#fio.some{opacity:0}
+[data-fundo="escuro"] #fio{color:var(--paper)}
+#topoBt{top:34px}
+#topoBt button,#topoBt a{border-radius:40px;border:1.5px solid currentColor;padding:7px 14px;font-size:10px}
+#topoBt button:hover,#topoBt a:hover{background:var(--am);color:var(--ink);border-color:var(--am)}
+#prog{height:3px}
+#prog i{background:var(--foil);background-size:250% 100%;animation:brilho 5s linear infinite}
+#cont{right:200px;bottom:30px;font-size:10px}
+.nav{right:80px;bottom:18px;gap:10px}
+.nav button{width:46px;height:46px;border-radius:50%;border:1.5px solid currentColor;transition:transform .25s,background .25s,color .25s,opacity .25s}
+.nav button:hover{background:var(--am);color:var(--ink);border-color:var(--am);transform:scale(1.08);opacity:1}
+#sumario{background:var(--ink-2)}
+#sumario h3{font-family:var(--serif);font-weight:600;color:var(--am);text-transform:none}
+#fala{border-left-color:var(--am);font-family:var(--corpo);font-weight:300}
+
+/* botões */
+.botao{border-radius:60px;border:1.5px solid currentColor;padding:16px 28px;font-size:11.5px;letter-spacing:.18em;position:relative;overflow:hidden}
+.botao:hover{background:none;color:inherit;border-color:currentColor;transform:translateY(-2px);box-shadow:0 14px 30px rgba(156,122,60,.35)}
+.botao.ouro{background:var(--foil);background-size:250% 100%;color:var(--ink);border-color:transparent;animation:brilho 6s linear infinite;box-shadow:0 10px 28px rgba(201,164,92,.35)}
+.botao.ouro:hover{color:var(--ink);background:var(--foil);background-size:250% 100%}
+.botao.escuro-b{background:var(--ink);color:var(--am-cl);border-color:var(--ink)}
+.botao.escuro-b:hover{color:var(--am-cl);background:var(--ink)}
+.botao svg.ico{width:20px;height:20px}
+
+/* ícones e medalhões ovais dourados */
+svg.ico{stroke-width:1.6}
+.med{width:70px;height:70px;border-radius:50%;display:grid;place-items:center;position:relative;flex:none;background:radial-gradient(circle at 35% 30%,#FFF9E9,#F1E3C3 58%,#DBC596);box-shadow:inset 0 0 0 1.5px rgba(156,122,60,.65),0 8px 20px rgba(60,35,15,.16);color:var(--vm-2)}
+.med::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(201,164,92,.5)}
+.med svg.ico{width:32px;height:32px}
+.escuro .med{background:radial-gradient(circle at 35% 30%,#5C3B24,#2B1A10 72%);box-shadow:inset 0 0 0 1.5px var(--am),0 10px 24px rgba(0,0,0,.4);color:var(--am)}
+.amarelo .med{background:radial-gradient(circle at 35% 30%,#3A2416,#1E120A 72%);color:var(--am-cl);box-shadow:inset 0 0 0 1.5px var(--am-cl)}
+.med.p::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:1.5px solid var(--am);animation:pulsa2 2.8s ease-out infinite;animation-delay:var(--pd,0s)}
+.med.peq{width:52px;height:52px}.med.peq svg.ico{width:24px;height:24px}
+
+/* espaço reservado para a equipe de design: o arquivo em assets/slots/<nome> aparece sozinho */
+.slot{position:relative;overflow:hidden;display:grid;place-items:center;border:1.5px dashed rgba(156,122,60,.6);background:repeating-linear-gradient(135deg,rgba(201,164,92,.08) 0 14px,transparent 14px 28px),rgba(255,252,246,.45);border-radius:6px}
+.escuro .slot{border-color:rgba(201,164,92,.5);background:repeating-linear-gradient(135deg,rgba(201,164,92,.07) 0 14px,transparent 14px 28px),rgba(255,255,255,.02)}
+.amarelo .slot{border-color:rgba(30,18,10,.45);background:repeating-linear-gradient(135deg,rgba(30,18,10,.06) 0 14px,transparent 14px 28px),rgba(255,250,235,.25)}
+.slot::before{content:'';position:absolute;inset:0;background:linear-gradient(100deg,transparent 35%,rgba(255,240,200,.32) 50%,transparent 65%);animation:varrer 4.2s ease-in-out infinite;pointer-events:none}
+.slot::after{content:'';position:absolute;inset:12px;pointer-events:none;background:
+  linear-gradient(var(--am),var(--am)) 0 0/20px 2px no-repeat,linear-gradient(var(--am),var(--am)) 0 0/2px 20px no-repeat,
+  linear-gradient(var(--am),var(--am)) 100% 0/20px 2px no-repeat,linear-gradient(var(--am),var(--am)) 100% 0/2px 20px no-repeat,
+  linear-gradient(var(--am),var(--am)) 0 100%/20px 2px no-repeat,linear-gradient(var(--am),var(--am)) 0 100%/2px 20px no-repeat,
+  linear-gradient(var(--am),var(--am)) 100% 100%/20px 2px no-repeat,linear-gradient(var(--am),var(--am)) 100% 100%/2px 20px no-repeat}
+.slot figcaption{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;color:var(--am-2);padding:16px}
+.escuro .slot figcaption{color:var(--am)}
+.slot figcaption svg.ico{width:30px;height:30px;margin-bottom:4px}
+.slot figcaption b{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--ink);line-height:1.1}
+.escuro .slot figcaption b{color:var(--paper)}
+.slot figcaption span{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.slot.cheio{border:0;background:none}
+.slot.cheio::before,.slot.cheio::after,.slot.cheio figcaption{display:none}
+.slot>img,.slot>video{position:absolute;inset:0;width:100%;height:100%;object-fit:var(--fit,cover);animation:kb 16s ease-in-out infinite alternate}
+.slot.contem>img,.slot.contem>video{object-fit:contain}
+
+/* elementos da marca: forminha plissada, bombom, avelãs e brilhos */
+.roseta{position:absolute;pointer-events:none;color:#6B4325;opacity:.16;animation:gira 90s linear infinite;z-index:0}
+.escuro .roseta{color:var(--am);opacity:.12}
+.amarelo .roseta{color:var(--ink);opacity:.08}
+.bombom{position:absolute;pointer-events:none;filter:drop-shadow(0 18px 24px rgba(30,18,10,.35));animation:flutuar 7s ease-in-out infinite;z-index:1}
+.avela{position:absolute;width:34px;height:36px;pointer-events:none;animation:flutuar 6s ease-in-out infinite;z-index:1;filter:drop-shadow(0 8px 10px rgba(30,18,10,.3))}
+.brilhos{position:absolute;inset:0;pointer-events:none;z-index:0}
+.brilhos i{position:absolute;width:6px;height:6px;border-radius:50%;background:radial-gradient(#FFF3C6,rgba(233,209,152,0) 70%);animation:cintila 3.6s ease-in-out infinite}
+.brilhos i:nth-child(1){left:12%;top:22%}.brilhos i:nth-child(2){left:86%;top:18%;animation-delay:.6s}.brilhos i:nth-child(3){left:74%;top:78%;animation-delay:1.2s}.brilhos i:nth-child(4){left:22%;top:84%;animation-delay:1.8s}.brilhos i:nth-child(5){left:52%;top:12%;animation-delay:2.4s}.brilhos i:nth-child(6){left:93%;top:56%;animation-delay:3s}.brilhos i:nth-child(7){left:6%;top:58%;animation-delay:.9s}.brilhos i:nth-child(8){left:40%;top:90%;animation-delay:2.1s}
+.fita{display:flex;align-items:center;gap:10px;color:var(--am)}
+.fita::before,.fita::after{content:'';height:1px;width:60px;background:currentColor;opacity:.6}
+
+/* entrada com foco, saída com subida (cinema) */
+.anima{filter:blur(8px);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.75,.2,1),filter .8s ease}
+.tela.ativa .anima{filter:none}
+.tela.saindo .anima{opacity:0!important;transform:translateY(-18px) scale(.98)!important;filter:blur(6px);transition:opacity .35s,transform .45s,filter .35s!important;transition-delay:0s!important}
+.tela.ativa .d7{transition-delay:.84s}.tela.ativa .d8{transition-delay:.96s}
+
+/* cortina: chocolate e folha dourada com o bombom ao centro */
+#wipe .wp-a{background:var(--ink-2)}
+#wipe .wp-b{background:var(--foil);background-size:200% 100%}
+#wipe .wp-b .par-w{gap:24px}
+#wipe .wp-b .par-w .cl-w{font-family:var(--serif);font-weight:600;font-size:80px;color:var(--ink);line-height:1}
+#wipe .wp-b .par-w .rocher-w{width:110px;height:110px}
+#wipe .wp-b .par-w span{font-family:var(--serif);font-weight:500;font-size:40px}
+
+/* PDF e movimento reduzido */
+.pdf .anima{filter:none!important}
+.pdf .slot::before{display:none}
+.pdf .roseta,.pdf .bombom,.pdf .avela,.pdf .brilhos i{animation:none!important}
+.pdf .brilhos{display:none}

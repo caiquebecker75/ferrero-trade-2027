@@ -9,7 +9,7 @@ telas = ''.join((S / f).read_text() for f in sorted(p.name for p in S.glob('s[0-
 shell = (S / 'shell.html').read_text()
 html = shell.replace('__TELAS__', telas).replace('__VERSAO__', v)
 (R / 'index.html').write_text(html)
-css = ''.join((S / f).read_text() for f in ['base.css', 'quem.css', 'casa.css', 'ferrero.css', 'celular.css'] if (S / f).exists())
+css = ''.join((S / f).read_text() for f in ['base.css', 'tema.css', 'telas.css', 'celular.css'] if (S / f).exists())
 (R / 'assets/deck.css').write_text(css)
 (R / 'assets/deck.js').write_text((S / 'deck.js').read_text())
 tudo = html + css + (R / 'assets/deck.js').read_text()
