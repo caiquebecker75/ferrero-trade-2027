@@ -1,0 +1,113 @@
+
+/* ===== Quem é a 75 LAB: padrão das apresentações da casa (RFQ Arcor, BID Alpargatas), cores do site 75lab.com.br ===== */
+.tela.q-tema-lime{background:#C0EE4E;color:#050505}
+.tela.q-tema-escuro{background:#101013;color:#F2F1E9}
+.tela.q-tema-claro{background:#F2F1E9;color:#050505}
+.tela.q-tema-claro2{background:#E7E5DA;color:#050505}
+.tela.q-tema-lime::before{background:radial-gradient(600px circle at var(--mx) var(--my),rgba(255,255,255,.25),transparent 60%)}
+.tela.q-tema-escuro::before{background:radial-gradient(520px circle at var(--mx) var(--my),rgba(192,238,78,.075),rgba(1,162,144,.035) 40%,transparent 70%)}
+[class*="q-tema"] h2 em{color:inherit}
+.q-tema-escuro .eyebrow b{color:#C0EE4E}
+.q-tema-lime .eyebrow b,.q-tema-claro .eyebrow b,.q-tema-claro2 .eyebrow b{color:#01A290}
+.t-lime{color:#C0EE4E}.t-teal{color:#01A290}
+.q-eb{font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.destaque-cap{display:inline-block;font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;background:#050505;color:#C0EE4E;padding:7px 12px}
+
+/* propósito */
+.q-prop .q-eb.anima{position:absolute;left:80px;top:112px}
+.q-prop h2{position:absolute;left:80px;top:146px;width:820px;font-size:80px;line-height:.98}
+.q-prop .lead{position:absolute;left:80px;top:352px;width:800px;font-size:18px;max-width:none}
+.q-prop .balcao{position:absolute;left:80px;top:530px;width:800px;display:grid;grid-template-columns:1fr 180px 1fr;gap:14px;align-items:center}
+.q-prop .lado-b{background:#050505;color:#F2F1E9;padding:18px 20px}
+.q-prop .lado-b span{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#C0EE4E}
+.q-prop .lado-b b{display:block;font-family:var(--titulo);font-weight:900;font-size:25px;text-transform:uppercase;margin:6px 0 4px;line-height:1}
+.q-prop .lado-b small{font-size:13px;opacity:.75}
+.q-prop .meio-b{text-align:center}
+.q-prop .meio-b img{height:30px;margin:0 auto 10px}
+.q-prop .meio-b i{font-style:normal;font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.1em}
+.q-prop .assin-prop{position:absolute;left:80px;top:690px;font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:.16em;text-transform:uppercase;background:#050505;color:#C0EE4E;padding:8px 12px}
+.q-prop .imprensa{position:absolute;left:950px;top:112px;width:570px;display:flex;flex-direction:column;gap:12px}
+.q-prop .mat{display:grid;grid-template-columns:210px 1fr;gap:16px;background:#050505;color:#F2F1E9;padding:12px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.q-prop .mat:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 #F2F1E9}
+.q-prop .print{display:block;background:#fff;overflow:hidden;height:290px}
+.q-prop .barra-m{display:flex;align-items:center;gap:4px;height:20px;padding:0 6px;background:#e6e4dc;color:#555;font-style:normal;font-family:var(--mono);font-size:9px}
+.q-prop .barra-m b{width:6px;height:6px;border-radius:50%;background:#b9b6aa}
+.q-prop .barra-m b:last-of-type{margin-right:6px}
+.q-prop .print img{width:100%}
+.q-prop .txt{display:flex;flex-direction:column;gap:8px}
+.q-prop .txt q{font-family:var(--titulo);font-weight:900;font-size:26px;line-height:1.02;text-transform:uppercase;quotes:'“' '”'}
+.q-prop .txt em{font-style:normal;font-size:14px;line-height:1.4;color:#C0EE4E}
+.q-prop .txt cite{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.06em;opacity:.75;line-height:1.5}
+.q-prop .ler{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#C0EE4E;margin-top:auto}
+.q-prop .ler svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}
+.pdf .so-tela{display:none!important}
+
+/* diferencial */
+.q-dif h2{position:absolute;left:80px;top:110px;width:1300px;font-size:58px}
+.q-dif .modelos{position:absolute;left:80px;right:80px;top:250px;display:grid;grid-template-columns:1fr 1.35fr;gap:16px}
+.q-dif .mod{border:2px solid rgba(242,241,233,.18);padding:16px 18px}
+.q-dif .mod.lab{border-color:#C0EE4E}
+.q-dif .mod .q-eb{display:block;margin-bottom:12px}
+.q-dif .mod.lab .q-eb{color:#C0EE4E}
+.q-dif .seq{display:flex;gap:6px}
+.q-dif .seq span{flex:1;text-align:center;font-family:var(--titulo);font-weight:900;font-size:20px;text-transform:uppercase;padding:12px 4px;background:rgba(242,241,233,.08);clip-path:polygon(0 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,0 100%,12px 50%)}
+.q-dif .trad .seq span{color:rgba(242,241,233,.6)}
+.q-dif .seq .x{background:rgba(232,65,44,.25);color:#ff8a78!important}
+.q-dif .lab .seq span{background:rgba(192,238,78,.14)}
+.q-dif .seq .ok{background:#C0EE4E;color:#050505}
+.q-dif .pilares-q{position:absolute;left:80px;right:80px;top:404px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.q-dif .pilares-q div{border-top:3px solid #C0EE4E;padding-top:12px}
+.q-dif .pilares-q i{font-style:normal;font-family:var(--mono);font-size:11px;font-weight:700;color:#C0EE4E}
+.q-dif .pilares-q b{display:block;font-family:var(--titulo);font-weight:900;font-size:26px;text-transform:uppercase;line-height:1;margin:6px 0 8px}
+.q-dif .pilares-q p{font-size:14.5px;line-height:1.45;opacity:.82}
+.q-dif .provas{position:absolute;left:80px;right:80px;top:620px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;background:rgba(242,241,233,.05);padding:18px 20px}
+.q-dif .provas b{display:block;font-family:var(--titulo);font-weight:900;font-size:64px;color:#C0EE4E;line-height:.9}
+.q-dif .provas>div>span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+
+/* números */
+.q-num .destaque-cap{position:absolute;left:80px;top:106px}
+.q-num h2{position:absolute;left:80px;top:146px;font-size:56px;width:1300px}
+.q-num .grade{position:absolute;left:80px;right:80px;top:292px;display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid rgba(5,5,5,.16);border-left:2px solid rgba(5,5,5,.16)}
+.q-num .grade>div{padding:22px 22px 20px;border-right:2px solid rgba(5,5,5,.16);border-bottom:2px solid rgba(5,5,5,.16);height:196px;display:flex;flex-direction:column;justify-content:space-between;position:relative;transition:background .25s}
+.q-num .grade>div:hover{background:#fff}
+.q-num .grade b{font-family:var(--titulo);font-weight:900;font-size:88px;line-height:.86}
+.q-num .grade b small{font-size:30px;margin-left:6px}
+.q-num .grade>div>span{font-size:14.5px;line-height:1.4;opacity:.8;max-width:270px}
+.q-num .grade svg.ico{position:absolute;right:18px;top:18px;width:30px;height:30px;color:#01A290}
+.q-num .grade .destaque{background:#050505;color:#F2F1E9}
+.q-num .grade .destaque b{color:#C0EE4E}
+.q-num .grade .destaque svg.ico{color:#C0EE4E}
+
+/* clientes */
+.q-cli h2{position:absolute;left:80px;top:110px;width:1300px;font-size:58px}
+.q-cli .lead{position:absolute;left:80px;top:186px;width:1200px;font-size:17px;max-width:none}
+.q-cli .grupo{position:absolute;left:80px;right:80px}
+.q-cli .grupo.g1{top:290px}
+.q-cli .grupo.g2{top:500px}
+.q-cli .cab-g{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.q-cli .cab-g svg.ico{width:30px;height:30px;color:#01A290}
+.q-cli .cab-g b{font-family:var(--titulo);font-weight:900;font-size:28px;text-transform:uppercase}
+.q-cli .cab-g span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.65}
+.q-cli .logos{display:grid;grid-template-columns:repeat(10,1fr);gap:10px}
+.q-cli .logos div{background:#fff;height:110px;display:grid;place-items:center;padding:14px;border:2px solid transparent;transition:border-color .2s,transform .2s}
+.q-cli .logos div:hover{border-color:#050505;transform:translateY(-3px)}
+.q-cli .logos img{max-width:100%;max-height:60px;object-fit:contain}
+
+/* celular */
+.cel .q-prop *,.cel .q-dif *,.cel .q-num *,.cel .q-cli *{position:static!important}
+.cel .q-prop h2,.cel .q-dif h2,.cel .q-num h2,.cel .q-cli h2{width:auto}
+.cel .q-prop .balcao,.cel .q-dif .modelos,.cel .q-dif .pilares-q,.cel .q-dif .provas,.cel .q-num .grade{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}
+.cel .q-prop .imprensa{width:auto;margin-top:18px}
+.cel .q-prop .mat{grid-template-columns:1fr}
+.cel .q-prop .print{height:200px}
+.cel .q-prop .assin-prop{display:inline-block;margin-top:14px}
+.cel .q-dif .seq{flex-wrap:wrap}
+.cel .q-num .grade>div{height:auto;gap:10px}
+.cel .q-num .grade b{font-size:56px}
+.cel .q-cli .logos{grid-template-columns:repeat(3,1fr)}
+.cel .q-cli .grupo{margin-top:18px}
+.q-prop h2{font-size:76px}
+.q-prop .lead{top:410px}
+.q-prop .balcao{top:560px}
+.q-prop .assin-prop{top:712px}
+.q-dif .provas b{margin-bottom:10px}

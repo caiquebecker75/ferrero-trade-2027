@@ -1,0 +1,112 @@
+
+/* ===== celular e tablet estreito: telas empilhadas, sem escala e sem rolagem lateral ===== */
+html.cel,html.cel body{height:auto;overflow-x:hidden;overflow-y:auto;background:var(--paper)}
+.cel #wrap{position:static;overflow:visible;background:none}
+.cel #stage{position:static;width:auto;height:auto;margin:0;transform:none!important;overflow:visible}
+.cel .tela{position:relative;inset:auto;opacity:1;visibility:visible;transform:none;filter:none;transition:none;padding:22px 22px 34px;min-height:0;overflow:hidden}
+.cel .tela::before,.cel .grao,.cel #topoBt,.cel #rodape,.cel #cursor,.cel #anel,.cel #fala,.cel .clique{display:none!important}
+.cel .anima{opacity:1;transform:none;transition:none}
+.cel .ic .tr{stroke-dashoffset:0}
+.cel .marcas,.cel .miolo,.cel .fonte,.cel .texto,.cel .ab-num,.cel .ab-txt,.cel .cap-num,.cel .cap-txt,.cel .trilha,.cel .fim-g,.cel .fim .rodape{position:static;inset:auto;width:auto;max-width:100%}
+.cel .marcas{height:auto;margin-bottom:18px;flex-wrap:wrap;gap:8px}
+.cel .marcas .par img.bd{height:26px}.cel .marcas .par img.lab{height:14px}
+.cel h1{font-size:44px!important}
+.cel h2{font-size:32px!important;max-width:100%!important;margin:0 0 14px!important}
+.cel h3{font-size:24px!important}
+.cel .lead,.cel .txt,.cel p,.cel dd,.cel li{font-size:16px}
+.cel .fonte{display:block;margin-top:18px;font-size:11px}
+.cel img{max-width:100%;height:auto}
+/* toda grade vira pilha */
+.cel .lab-g,.cel .dif-g,.cel .res-g,.cel .mk-g,.cel .mk-leitura,.cel .sh-g,.cel .mis,.cel .br-g,.cel .pi-mk,.cel .pi-tr,.cel .pi-g,.cel .ca-p,.cel .gd-g,.cel .jornada,.cel .pc-grupos,.cel .pc-g,.cel .at-p,.cel .at-cards,.cel .at-cross,.cel .ex-g,.cel .med-g,.cel .onda,.cel .rs-g,.cel .fim-g,.cel .pl-g,.cel .nums{display:grid!important;grid-template-columns:1fr!important;gap:14px!important}
+.cel .pc-g{grid-template-columns:1fr 1fr!important}
+.cel .nums{grid-template-columns:repeat(3,1fr)!important}
+.cel .nums b{font-size:52px}
+.cel .dif-c,.cel .mk-c{border:0!important;padding:12px 0!important;border-bottom:2px solid var(--linha)!important}
+/* telas específicas */
+.cel .abertura{background:var(--ink)}
+.cel .ab-num{font-size:150px;justify-content:flex-start}
+.cel .ab-num .mais,.cel .ab-num .pc{font-size:80px;margin-top:12px}
+.cel .ab-barras i::after{width:var(--w)}
+.cel .capa .foto{position:static;width:100%;height:240px;transform:none}
+.cel .capa .veu{display:none}
+.cel .capa .texto{margin-top:18px}
+.cel .cap .cap-num{font-size:150px}
+.cel .trilha{grid-template-columns:1fr 1fr;margin-top:20px}
+.cel .trilha li{font-size:18px}
+.cel .dp-cab{display:none}
+.cel .dp-l{grid-template-columns:1fr;gap:6px}
+.cel .dp-seta{display:none}
+.cel .mk-n{font-size:64px}
+.cel .mk-seta{display:none}
+.cel .sh-num b{font-size:90px}
+.cel .abas-bts{flex-wrap:wrap}
+.cel .aba{padding:10px 12px;min-height:44px}
+.cel .painel{display:block!important;margin-bottom:22px;border-left:3px solid var(--am);padding-left:12px}
+.cel .painel.grade,.cel .painel.flex{display:block!important}
+.cel .abas-bts{display:none}
+.cel .mis-latas img{height:110px}
+.cel .br-topo,.cel .pl-topo,.cel .pc-topo,.cel .ca-topo,.cel .at-topo,.cel .gd-topo{display:block}
+.cel .br-real{max-width:100%;margin-top:10px}
+.cel .ca-num b{font-size:90px}
+.cel .ca-dl,.cel .at-dl,.cel .conj dl,.cel .med-c dl{grid-template-columns:1fr}
+.cel .kvf{width:100%;height:auto}
+.cel .kvf img{height:auto}
+.cel .pt{display:none}
+.cel .pl-selos img{width:80px;height:80px}
+.cel .gd{transform-origin:0 0;max-width:none}
+.cel .gd-esq{overflow-x:auto}
+.cel .ligacoes{display:none}
+.cel .resultado-esp{margin:14px 0}
+.cel .peca .arte{height:180px}
+.cel .fluxo{flex-wrap:wrap}
+.cel .fluxo i{flex:0 0 14px}
+.cel .ano{display:none}
+.cel .eco{display:none}
+.cel .rs-l b{width:100%}
+.cel .at-img{width:100%;height:220px}
+.cel .ex-lista li{grid-template-columns:44px 1fr 60px}
+.cel .fim-latas{width:100%}
+.cel .fim .rodape{flex-direction:column;align-items:flex-start;gap:12px;margin-top:24px}
+.cel .fim .rodape small{text-align:left}
+.cel .cal-ano,.cel .cal-g{grid-template-columns:1fr!important}
+/* ajustes do teste no iPhone */
+.cel .ab-barras span,.cel .pi-base,.cel .etapa-j,.cel .pc-gr,.cel .peca .canal,.cel .peca .resolve,.cel .a-pp,.cel .gd-cab span{font-size:14px;letter-spacing:.02em}
+.cel .pc-gr span{display:block}
+.cel .fluxo span{white-space:normal}
+.cel .res-fio{flex-wrap:wrap}
+.cel .res-fio i{flex:0 0 16px}
+.cel .gd-esq{max-width:100%}
+.cel .tela *{max-width:100%}
+.cel .gd,.cel .gd *{max-width:none}
+.cel #sumario{display:none}
+.cel body,.cel #wrap{overflow-x:hidden}
+.cel .botao{font-size:14px;min-height:44px}
+.cel .rc-g,.cel .pq-g,.cel .in-g,.cel .mp-g{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}
+.cel .in-frase{font-size:34px!important}.cel .in-aspas{font-size:120px;height:50px}
+.cel .in-x,.cel .in-seta,.cel .mp-setas{display:none}
+.cel .rc-g li{min-height:0}
+.cel .mp-amb{min-height:0}
+.cel .gt{display:block;overflow:hidden}
+.cel .gt-l{grid-template-columns:1fr!important;width:auto;padding:6px 0}
+.cel .gt-cab{display:none}
+.cel .gt-r span{font-size:14px}
+.cel .gt-t{height:18px}
+.cel .gt-marcos .gt-t{display:flex;flex-wrap:wrap;gap:8px;height:auto}
+.cel .gt-m b{font-size:14px;white-space:normal}
+.cel .in-job b{font-size:14px}
+.cel .rc-grade{display:grid;grid-template-columns:160px repeat(6,90px);overflow-x:auto}
+.cel .tela .gt,.cel .tela .rc-grade{max-width:100%}
+.cel .gt *, .cel .rc-grade *{max-width:none}
+.cel .ca-linha,.cel .ca-anos{width:100%}
+.cel .rc-topo,.cel .mp-topo{display:block}
+.cel .rc-leg{flex-wrap:wrap}
+.cel .rc-grade{overflow-x:auto;grid-template-columns:130px repeat(6,74px)}
+.cel .aba.rc-p{font-size:12px;padding:8px 4px;letter-spacing:0}
+.cel .rc-a{font-size:15px}
+.cel #wipe,.cel #faixas{display:none}
+.cel .matriz{grid-template-columns:1fr!important}
+.cel .q{padding-right:20px}.cel .q i{position:static;align-self:flex-start}
+.cel .q-prop .lado-b small,.cel .q-prop .q-eb,.cel .q-prop .txt cite,.cel .q-prop .txt em,.cel .q-dif .provas>div>span,.cel .q-dif .pilares-q p,.cel .q-num .grade>div>span,.cel .q-cli .cab-g span,.cel .te-aut,.cel .te-onde,.cel .pp-linha span,.cel .q span{font-size:14px;letter-spacing:.02em}
+.cel .b2-lado{flex-wrap:wrap}
+.cel .q-uma .q-logos .q-eb,.cel .ag-barras span,.cel .teoria.mini{font-size:14px}
+.cel .teoria.mini b{font-size:12px}
